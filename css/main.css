@@ -1,0 +1,436 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+main {
+    width: 90%;
+    max-width: 65em;
+    margin: 0 auto;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.cg {
+    font-family: "Cormorant Garamond", serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.ps {
+    font-family: "PT Serif", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.ms,
+h4 {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+header {
+    margin: 4em 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+header nav ul {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+}
+
+header nav li {
+    list-style: none;
+}
+
+header nav a {
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 0.75em;
+    letter-spacing: 0.1em;
+    padding: 1em;
+    margin-top: -1em;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+    text-underline-offset: 0.25em;
+    text-decoration-thickness: 0.02em;
+    text-decoration-color: #000;
+}
+
+.landing {
+    margin: 9em 0;
+}
+
+.landing .subline {
+    margin-top: 2.5em;
+    display: flex;
+    justify-content: space-between;
+}
+
+.landing h1 {
+    margin: 0;
+    font-size: 9em;
+}
+
+.landing p {
+    font-size: 1.55em;
+    max-width: 12em;
+    line-height: 150%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ── Big Buttons ── */
+
+.big-buttons {
+    border-top: 1px solid #eee;
+    display: flex;
+    flex-direction: row;
+}
+
+.big-button {
+    flex: 1;
+}
+
+.big-button-content {
+    padding: 4em 0;
+}
+
+.big-button:first-child {
+    padding-right: 6em;
+}
+
+.big-button:last-child {
+    border-left: 1px solid #eee;
+    padding-left: 6em;
+}
+
+.big-button p {
+    font-size: 1.25em;
+    line-height: 150%;
+}
+
+h3 {
+    font-weight: normal;
+    font-size: 1.6em;
+    margin-bottom: 0.5em;
+}
+
+/* ── Features / What I Do ── */
+
+.features {
+    padding: 5em 0;
+}
+
+h4 {
+    text-transform: uppercase;
+    color: #666;
+    font-size: 0.75em;
+    letter-spacing: 0.1em;
+}
+
+.feature-list ul {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 3em;
+    align-items: start;
+}
+
+.feature-list li {
+    padding: 0.65em 0;
+    list-style: none;
+    min-width: 0;
+}
+
+.feature-list li::before {
+    content: url(../img/bullet.svg);
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    padding-right: 0.25em;
+    position: relative;
+    bottom: 0.2em;
+}
+
+.skill-item {
+    font-size: 1.5em;
+    font-weight: normal;
+    display: inline-block;
+    cursor: default;
+}
+
+/* Collapse transition: opacity fades out first, then height shrinks */
+.skill-reveal {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.05s,
+                opacity 0.25s ease;
+    opacity: 0;
+}
+
+.skill-reveal > .skill-desc {
+    overflow: hidden;
+    min-height: 0;
+    font-size: 0.65em;
+    color: #666;
+    line-height: 170%;
+    padding-top: 0;
+    transition: padding 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.05s;
+}
+
+/* Expand transition: height opens first, then opacity fades in */
+.skill-item:hover .skill-reveal {
+    grid-template-rows: 1fr;
+    opacity: 1;
+    transition: grid-template-rows 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 0.4s ease 0.1s;
+}
+
+.skill-item:hover .skill-reveal > .skill-desc {
+    padding-top: 0.5em;
+    transition: padding 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── About Section ── */
+
+.about {
+    padding: 5em 0;
+    border-top: 1px solid #eee;
+}
+
+.about h4 {
+    margin-bottom: 2em;
+}
+
+.about-content {
+    max-width: 48em;
+}
+
+.about-lead {
+    font-size: 3.2em;
+    line-height: 120%;
+    margin-bottom: 0.6em;
+}
+
+.about-text p {
+    font-size: 1.25em;
+    line-height: 170%;
+    color: #333;
+}
+
+.about-text p + p {
+    margin-top: 1em;
+}
+
+/* ── Companies Section ── */
+
+.companies {
+    padding: 5em 0;
+    border-top: 1px solid #eee;
+}
+
+.companies .leading {
+    font-size: 1.25em;
+    text-align: center;
+    margin-bottom: 3em;
+}
+
+.company-list {
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+}
+
+.company-entry {
+    display: flex;
+    align-items: flex-start;
+    gap: 2.5em;
+}
+
+.company-entry .company-logo {
+    flex-shrink: 0;
+    width: 8em;
+    display: flex;
+    align-items: center;
+}
+
+.company-desc {
+    font-size: 1.1em;
+    line-height: 170%;
+    color: #555;
+}
+
+.company-logo img {
+    display: block;
+    height: 3em;
+    width: auto;
+    filter: grayscale(1) contrast(10) brightness(0.05);
+    mix-blend-mode: multiply;
+}
+
+.company-logo--sm img {
+    height: 1.9em;
+}
+
+.company-logo--md img {
+    height: 4em;
+}
+
+.company-logo--lg img {
+    height: 5em;
+}
+
+/* ── Footer ── */
+
+footer {
+    padding: 5em 0;
+    margin-top: 3em;
+    border-top: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25em;
+}
+
+footer p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.7em;
+    letter-spacing: 0.08em;
+    color: #999;
+    text-transform: uppercase;
+}
+
+/* ── Responsive ── */
+
+@media (max-width: 768px) {
+    header {
+        padding: 1em 0;
+        margin: 0;
+        position: sticky;
+        top: 0;
+        z-index: 1;
+        background-color: #fff;
+    }
+
+    .landing {
+        margin: 5em 0;
+    }
+
+    .landing h1 {
+        font-size: 7em;
+        text-align: center;
+    }
+
+    .landing .subline {
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .big-buttons {
+        flex-direction: column;
+        border-top: none;
+        border-bottom: 1px solid #eee;
+    }
+
+    .big-button:first-child,
+    .big-button:last-child {
+        padding: 0;
+        border-top: 1px solid #eee;
+        border-left: none;
+    }
+
+    .big-button-content {
+        padding: 2em 0;
+    }
+
+    .features {
+        padding: 3em 0;
+    }
+
+    .feature-list ul {
+        grid-template-columns: 1fr;
+    }
+
+    .company-entry {
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    .company-entry .company-logo {
+        width: auto;
+    }
+
+    .about-lead {
+        font-size: 2.4em;
+    }
+}
+
+@media (max-width: 480px) {
+    .landing {
+        margin: 3em 0;
+    }
+
+    .landing h1 {
+        font-size: 3.5em;
+    }
+
+    .landing p {
+        font-size: 1.2em;
+    }
+
+    .about-lead {
+        font-size: 1.8em;
+    }
+
+    .about-text p {
+        font-size: 1.1em;
+    }
+
+    .features {
+        padding: 2em 0;
+    }
+
+    .about {
+        padding: 3em 0;
+    }
+
+    .companies {
+        padding: 3em 0;
+    }
+
+    footer {
+        padding: 3em 0;
+        margin-top: 2em;
+    }
+}
