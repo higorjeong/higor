@@ -6,7 +6,7 @@
     <meta name="description" content="Higor Brito — Software Engineer specializing in Machine Learning, AI, Automation, and RPA.">
     <meta name="color-scheme" content="light">
     <meta name="referrer" content="no-referrer">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self'; style-src 'self'; font-src 'self'; script-src 'none'">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self'; style-src 'self'; font-src 'self'; script-src 'self'">
     <title>Higor Brito</title>
     <link rel="icon" href="img/logo_higor.png" type="image/png">
     <link rel="preload" href="fonts/montserrat-600.woff2" as="font" type="font/woff2" crossorigin>
@@ -20,105 +20,107 @@
         <header>
             <nav class="ms">
                 <ul>
-                    <li><a href="#about">about</a></li>
+                    <li><a href="#about" data-i18n="nav.about">about</a></li>
+                    <li><a href="#" id="lang-toggle" data-i18n="lang.switch">PT</a></li>
                 </ul>
             </nav>
         </header>
         <section class="landing">
-            <h1 class="cg">I automate everything, <i>brrrr</i></h1>
+            <h1 class="cg" data-i18n="landing.h1" data-i18n-html>I automate everything, <i>brrrr</i></h1>
             <div class="subline ps">
-                <p>Software Engineer. In my spare time, I'm kind of a cook... (Well, I try)</p>
+                <p data-i18n="landing.sub">Software Engineer. In my spare time, I'm kind of a cook... (Well, I try)</p>
             </div>
         </section>
         <section class="big-buttons ps">
             <div class="big-button">
                 <div class="big-button-content">
-                    <h3>Machine Learning &amp; AI</h3>
-                    <p>From computer vision to predictive models, I build intelligent systems that solve real-world problems.</p>
+                    <h3 data-i18n="bb.ml.title">Machine Learning &amp; AI</h3>
+                    <p data-i18n="bb.ml.desc">From computer vision to predictive models, I build intelligent systems that solve real-world problems.</p>
                 </div>
             </div>
             <div class="big-button">
                 <div class="big-button-content">
-                    <h3>Automation &amp; RPA</h3>
-                    <p>End-to-end process automation using RPA, scripting, and AI to eliminate repetitive work at scale.</p>
+                    <h3 data-i18n="bb.rpa.title">Automation &amp; RPA</h3>
+                    <p data-i18n="bb.rpa.desc">End-to-end process automation using RPA, scripting, and AI to eliminate repetitive work at scale.</p>
                 </div>
             </div>
         </section>
         <section class="features">
             <div class="feature-list">
-                <h4>What I Do</h4>
+                <h4 data-i18n="features.title">What I Do</h4>
                 <ul class="list-long ps">
                     <li>
-                        <span class="skill-item">Task Automation
-                            <span class="skill-reveal"><span class="skill-desc">End-to-end process automation, reducing analysis time with scripts, smart tools, and API orchestration.</span></span>
+                        <span class="skill-item"><span data-i18n="skill.automation">Task Automation</span>
+                            <span class="skill-reveal"><span class="skill-desc" data-i18n="skill.automation.desc">End-to-end process automation, reducing analysis time with scripts, smart tools, and API orchestration.</span></span>
                         </span>
                     </li>
                     <li>
-                        <span class="skill-item">Machine Learning
-                            <span class="skill-reveal"><span class="skill-desc">Predictive models and classification algorithms applied to market data, product performance, and customer satisfaction.</span></span>
+                        <span class="skill-item"><span data-i18n="skill.ml">Machine Learning</span>
+                            <span class="skill-reveal"><span class="skill-desc" data-i18n="skill.ml.desc">Predictive models and classification algorithms applied to market data, product performance, and customer satisfaction.</span></span>
                         </span>
                     </li>
                     <li>
-                        <span class="skill-item">Computer Vision
-                            <span class="skill-reveal"><span class="skill-desc">Computer vision systems for image analysis and processing in industrial and product contexts.</span></span>
+                        <span class="skill-item"><span data-i18n="skill.cv">Computer Vision</span>
+                            <span class="skill-reveal"><span class="skill-desc" data-i18n="skill.cv.desc">Computer vision systems for image analysis and processing in industrial and product contexts.</span></span>
                         </span>
                     </li>
                     <li>
-                        <span class="skill-item">Chatbot Development
-                            <span class="skill-reveal"><span class="skill-desc">AI-powered chatbots for customer support, workflow automation, and integration with internal systems.</span></span>
+                        <span class="skill-item"><span data-i18n="skill.chatbot">Chatbot Development</span>
+                            <span class="skill-reveal"><span class="skill-desc" data-i18n="skill.chatbot.desc">AI-powered chatbots for customer support, workflow automation, and integration with internal systems.</span></span>
                         </span>
                     </li>
                     <li>
-                        <span class="skill-item">Robotic Process Automation
-                            <span class="skill-reveal"><span class="skill-desc">Automating repetitive tasks at scale with RPA, eliminating manual work and boosting operational efficiency.</span></span>
+                        <span class="skill-item"><span data-i18n="skill.rpa">Robotic Process Automation</span>
+                            <span class="skill-reveal"><span class="skill-desc" data-i18n="skill.rpa.desc">Automating repetitive tasks at scale with RPA, eliminating manual work and boosting operational efficiency.</span></span>
                         </span>
                     </li>
                     <li>
-                        <span class="skill-item">Business Intelligence
-                            <span class="skill-reveal"><span class="skill-desc">Dashboards, KPIs, and data analysis for strategic decision-making in logistics, cost, and performance.</span></span>
+                        <span class="skill-item"><span data-i18n="skill.bi">Business Intelligence</span>
+                            <span class="skill-reveal"><span class="skill-desc" data-i18n="skill.bi.desc">Dashboards, KPIs, and data analysis for strategic decision-making in logistics, cost, and performance.</span></span>
                         </span>
                     </li>
                     <li>
-                        <span class="skill-item">Software Development
-                            <span class="skill-reveal"><span class="skill-desc">Building systems, integrations, database orchestration, and APIs to enable corporate processes.</span></span>
+                        <span class="skill-item"><span data-i18n="skill.dev">Software Development</span>
+                            <span class="skill-reveal"><span class="skill-desc" data-i18n="skill.dev.desc">Building systems, integrations, database orchestration, and APIs to enable corporate processes.</span></span>
                         </span>
                     </li>
                 </ul>
             </div>
         </section>
         <section id="about" class="about ps">
-            <h4 class="ms">About</h4>
+            <h4 class="ms" data-i18n="about.title">About</h4>
             <div class="about-content">
                 <div class="about-text">
-                    <p class="about-lead cg">5 years building systems that make businesses move faster.</p>
-                    <p>Software Engineer with solid experience in Systems Automation, Software Development, Machine Learning, and Business Intelligence. Throughout my career, I've worked on reducing analysis time through automation, developing chatbots, orchestrating APIs, and delivering insights that directly impacted product strategy and customer satisfaction.</p>
+                    <p class="about-lead cg" data-i18n="about.lead">5 years building systems that make businesses move faster.</p>
+                    <p data-i18n="about.text">Software Engineer with solid experience in Systems Automation, Software Development, Machine Learning, and Business Intelligence. Throughout my career, I've worked on reducing analysis time through automation, developing chatbots, orchestrating APIs, and delivering insights that directly impacted product strategy and customer satisfaction.</p>
                 </div>
             </div>
         </section>
         <section class="companies ps">
-            <p class="leading">I used to work at</p>
+            <p class="leading" data-i18n="companies.leading">I used to work at</p>
             <div class="company-list">
                 <div class="company-entry">
                     <div class="company-logo company-logo--sm"><img src="img/samsung.svg" alt="Samsung" loading="lazy"></div>
-                    <p class="company-desc">Market analysis for the Galaxy product lines — Mobile, Wearables, Tablets &amp; Smartwatch. Data analysis, field product performance tracking, and national and worldwide market satisfaction insights.</p>
+                    <p class="company-desc" data-i18n="company.samsung">Market analysis for the Galaxy product lines — Mobile, Wearables, Tablets &amp; Smartwatch. Data analysis, field product performance tracking, and national and worldwide market satisfaction insights.</p>
                 </div>
                 <div class="company-entry">
                     <div class="company-logo company-logo--lg"><img src="img/brastemp.png" alt="Brastemp" loading="lazy"></div>
-                    <p class="company-desc">Part of the Whirlpool Group. Systems development and automations for process performance tracking, KPI monitoring, database orchestration, and system integrations.</p>
+                    <p class="company-desc" data-i18n="company.brastemp">Part of the Whirlpool Group. Systems development and automations for process performance tracking, KPI monitoring, database orchestration, and system integrations.</p>
                 </div>
                 <div class="company-entry">
                     <div class="company-logo company-logo--md"><img src="img/Whirlpool.png" alt="Whirlpool" loading="lazy"></div>
-                    <p class="company-desc">Logistics analysis, cost optimization, and process performance monitoring across the group's operations.</p>
+                    <p class="company-desc" data-i18n="company.whirlpool">Logistics analysis, cost optimization, and process performance monitoring across the group's operations.</p>
                 </div>
                 <div class="company-entry">
                     <div class="company-logo company-logo--sm"><img src="img/spotify.png" alt="Spotify" loading="lazy"></div>
-                    <p class="company-desc">Software engineering and automation solutions.</p>
+                    <p class="company-desc" data-i18n="company.spotify">Software engineering and automation solutions.</p>
                 </div>
             </div>
         </section>
         <footer>
-            <p>Higor Brito &mdash; All rights reserved &reg; 2026</p>
+            <p data-i18n="footer">Higor Brito &mdash; All rights reserved &reg; 2026</p>
         </footer>
     </main>
+    <script src="js/i18n.js"></script>
 </body>
 </html>
