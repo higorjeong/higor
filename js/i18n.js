@@ -31,7 +31,6 @@ var translations = {
     "company.whirlpool": "Logistics analysis, cost optimization, and process performance monitoring across the group\u2019s operations.",
     "company.spotify": "Software engineering and automation solutions.",
     "footer": "Higor Brito \u2014 All rights reserved \u00AE 2026",
-    "lang.switch": "PT"
   },
   pt: {
     "nav.about": "sobre",
@@ -64,48 +63,33 @@ var translations = {
     "company.brastemp": "Parte do Grupo Whirlpool. Desenvolvimento de sistemas e automa\u00E7\u00F5es para acompanhamento de performance de processos, monitoramento de KPIs, orquestra\u00E7\u00E3o de banco de dados e integra\u00E7\u00F5es de sistemas.",
     "company.whirlpool": "An\u00E1lise log\u00EDstica, otimiza\u00E7\u00E3o de custos e monitoramento de performance de processos nas opera\u00E7\u00F5es do grupo.",
     "company.spotify": "Engenharia de software e solu\u00E7\u00F5es de automa\u00E7\u00E3o.",
-    "footer": "Higor Brito \u2014 Todos os direitos reservados \u00AE 2026",
-    "lang.switch": "EN"
+    "footer": "Higor Brito \u2014 Todos os direitos reservados \u00AE 2026"
   }
 };
 
 (function () {
-  var STORAGE_KEY = "lang";
-  var saved = localStorage.getItem(STORAGE_KEY);
   var browserLang = (navigator.language || "").toLowerCase();
-  var lang = saved || (browserLang.startsWith("pt") ? "pt" : "en");
+  var lang = browserLang.startsWith("pt") ? "pt" : "en";
 
-  function apply(l) {
-    var t = translations[l];
-    if (!t) return;
-    var els = document.querySelectorAll("[data-i18n]");
-    for (var i = 0; i < els.length; i++) {
-      var key = els[i].getAttribute("data-i18n");
-      if (t[key] !== undefined) {
-        if (els[i].getAttribute("data-i18n-html") !== null) {
-          els[i].innerHTML = t[key];
-        } else {
-          els[i].textContent = t[key];
-        }
+  var t = translations[lang];
+  if (!t) return;
+
+  var els = document.querySelectorAll("[data-i18n]");
+  for (var i = 0; i < els.length; i++) {
+    var key = els[i].getAttribute("data-i18n");
+    if (t[key] !== undefined) {
+      if (els[i].getAttribute("data-i18n-html") !== null) {
+        els[i].innerHTML = t[key];
+      } else {
+        els[i].textContent = t[key];
       }
     }
-    document.documentElement.lang = l === "pt" ? "pt-BR" : "en";
-    var desc = l === "pt"
-      ? "Higor Brito \u2014 Engenheiro de Software especializado em Machine Learning, IA, Automa\u00E7\u00E3o e RPA."
-      : "Higor Brito \u2014 Software Engineer specializing in Machine Learning, AI, Automation, and RPA.";
-    var meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", desc);
-    localStorage.setItem(STORAGE_KEY, l);
   }
 
-  apply(lang);
-
-  var btn = document.getElementById("lang-toggle");
-  if (btn) {
-    btn.addEventListener("click", function (e) {
-      e.preventDefault();
-      var next = localStorage.getItem(STORAGE_KEY) === "pt" ? "en" : "pt";
-      apply(next);
-    });
-  }
+  document.documentElement.lang = lang === "pt" ? "pt-BR" : "en";
+  var desc = lang === "pt"
+    ? "Higor Brito \u2014 Engenheiro de Software especializado em Machine Learning, IA, Automa\u00E7\u00E3o e RPA."
+    : "Higor Brito \u2014 Software Engineer specializing in Machine Learning, AI, Automation, and RPA.";
+  var meta = document.querySelector('meta[name="description"]');
+  if (meta) meta.setAttribute("content", desc);
 })();
